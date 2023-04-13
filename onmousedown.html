@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events javascript</title>
+</head>
+<body>
+    <h1>we used events on this heading</h1>
+    <button onmousedown="myfun()">click me1</button>
+    <button onmouseup="myxyz()">click me2</button>
+    <button onmouseenter="myabc()">click me3</button>
+    <button onmouseleave="mydef()">click me4</button>
+    <button onmouseout="myghi()">click me5</button>
+
+    <script>
+        function myfun(){
+            document.body.style.backgroundColor = "red";
+            document.body.style.color = "white";
+        }
+
+        function myxyz(){
+            document.body.style.backgroundColor = "green";
+            document.body.style.color = "white";
+        }
+
+        function myabc(){
+            document.body.style.backgroundColor = "yellow";
+            document.body.style.color = "black";
+        }
+
+        function mydef(){
+            document.body.style.backgroundColor = "blue";
+            document.body.style.color = "white";
+        }
+
+        function myghi(){
+            document.body.style.backgroundColor = "purple";
+            document.body.style.color = "white";
+        }
+    </script>
+</body>
+</html>

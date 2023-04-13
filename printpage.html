@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print page by javascript</title>
+</head>
+
+<body>
+    <div id="one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quas nobis exercitationem assumenda obcaecati blanditiis asperiores tenetur nisi,
+        similique eius natus impedit a laboriosam. Architecto accusamus ipsa dolorem ab fugiat maiores!
+        <button onclick="myfun('one')">div one</button>
+    </div>
+
+    <div id="two">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Maiores alias fuga qui perspiciatis nihil ullam, 
+        expedita officia placeat atque quod nostrum iure dolorem quam nemo? 
+        Consectetur voluptatibus repellendus, soluta nobis unde tempore eaque impedit laboriosam provident, 
+        optio temporibus delectus asperiores incidunt nihil aperiam nemo reprehenderit ad ab cum. At, non?
+        <button onclick="myfun('two')">div two</button>
+    </div>
+    <button onclick="mypage()">complete</button>
+
+    <script>
+        function mypage(){
+            window.print();
+        }
+
+        function myfun(paravalue){
+            var backup = document.body.innerHTML;
+            var divcontent = document.getElementById(paravalue).innerHTML
+            document.body.innerHTML = divcontent;
+            window.print();
+            document.body.innerHTML = backup;
+        }
+    </script>
+</body>
+
+</html>

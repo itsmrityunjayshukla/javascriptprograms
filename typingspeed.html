@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed</title>
+    <link rel="stylesheet" href="type.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=League+Spartan:wght@300&family=Oswald&family=Poppins:ital@1&family=Ubuntu:wght@300&family=Varela+Round&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="maindiv">
+        <div class="centerdiv">
+            <h1>Welcome To Typing Speed Test</h1>
+            <h2 id="msg"></h2>
+            <br>
+            <textarea name="" id="mywords" cols="100" rows="10" placeholder="Remember, be nice!"></textarea>
+            <br>
+            <button class="mainbtn" id="btn">Start</button>
+        </div>
+    </div>
+
+    <script>
+        const setofwords = ["I love using the five-paragraph model for writing.",
+         "I can find three points to argue for or exemplify just about any topic imaginable.",
+         "Cats are good pets because they are good companions, they are clean, and they are easy to care for.",
+         "Jaws is a classic film because of its acting, its cinematography, and its musical score.",
+         "Three examples of the U.S. governments checks and balances are its executive branch, its legislative branch, and its judicial branches.",
+         "The five-paragraph model is a valuable tool for many writing situations because it structures my writing, it aids my readers, and it is versatile."];
+
+         const msg = document.getElementById('msg');
+         const typewords = document.getElementById('mywords');
+         const btn = document.getElementById('btn');
+
+         let starttime, endtime;
+
+         const playGame = () => {
+            let randomnumber = Math.floor(Math.random()*setofwords.length);
+            msg.innerText = setofwords[randomnumber];
+            let date = new Date();
+            starttime = date.getTime();
+            btn.innerText = "Done";
+         }
+
+         const endplay = () => {
+            let date = new Date();
+            endtime = date.getTime();
+            let totalTime = ((endtime - starttime)/1000);
+            console.log(totalTime);
+
+            let totalstr = typewords.value;
+            let counters = wordcounter(totalstr);
+            let speed = Math.round((counters / totalTime) * 60);
+            let finalmsg = "You Typed total at " + speed + " Words per Minutes. ";
+            finalmsg += comparewords(msg.innerText, totalstr);
+            msg.innerText = finalmsg;
+         }
+
+         const comparewords = (str1, str2) => {
+            let word1 = str1.split(" ");
+            let word2 = str2.split(" ");
+            let cnt = 0;
+           
+            // arrayname then foreach then it will take whole function with value and index no. of that array. 
+           
+            word1.forEach(function(item, index){
+                if(item == word2[index]){
+                    cnt++;
+                }
+            })
+            let errorword = (word1.length - cnt);
+            return (cnt + " correct out of " + word1.length + " words and the total number of error are " + errorword + " .");
+         }
+
+         const wordcounter = (str) => {
+            let response = str.split(" ").length;
+            console.log(response);
+            return response;
+         }
+
+         btn.addEventListener('click', function(){
+            console.log(this);
+            if(this.innerText == 'Start'){
+                typewords.disabled = false;
+                playGame();
+            }else if(this.innerText == "Done"){
+                typewords.disabled = true;
+                btn.innerText = "Start";
+                endplay();
+            }
+         });
+    </script>
+</body>
+</html>

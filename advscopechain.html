@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope chain</title>
+</head>
+<body>
+    <script>
+        var a = "Hii...";
+
+        function first(){
+            var b = "I am yash...";
+
+            second();
+
+            function second(){
+                var c = "I am a Developer..."
+
+                console.log(a + " " + " " + b + " " + c);
+                three();
+            }
+        }
+
+        function three(){
+            var d = "Beginner";
+            console.log(a + " " + d);
+        }
+        first();
+    </script>
+</body>
+</html>

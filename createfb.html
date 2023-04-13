@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Page :)</title>
+</head>
+<body>
+    <script>
+
+        let database = [
+            {
+                usernames: "Mrityunjay Shukla",
+                Pass: "1234",
+            }
+        ];
+
+        let status = [
+            {
+                names : 'Yash Shukla',
+                status : 'I am a Developer',
+            },
+            {
+                names : "Nitin Shukla",
+                status : "I am a Software Engineer",
+            }
+        ];
+
+        const username = prompt("Enter User Name");
+        const password = prompt("Enter User Password");
+
+        const login = (user, pass) => {
+            if(user === database[0].usernames && pass === database[0].Pass){
+                // console.log(status);
+                for(let value of status)
+                {
+                    console.log(value);
+                }
+            }else{
+                alert("Username or Password is Incorrect");
+            }
+        }
+        login(username, password);
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    background-image: url('love.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* color: white; */
+}
+
+header{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

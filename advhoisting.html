@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting Javascript</title>
+</head>
+
+<body>
+    <script>
+        // var a = 10;
+        // console.log(a);
+        // var a = 20;
+
+        // console.log(b);
+        // const b = 20;
+
+        console.log("As a " + job);
+        var job = "Web Developer";
+        console.log("I am a " + job);
+
+        function myfun() {
+            console.log("As a " + job);
+            var job = "Full Stack Developer";
+            console.log("I am a " + job);
+        }
+
+        myfun();
+    </script>
+</body>
+
+</html>

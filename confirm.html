@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm</title>
+</head>
+
+<body>
+
+    <input type="button" onclick="myfun()" value="submit">
+    <script>
+        function myfun() {
+            var conf = confirm("Do you want to visit this weebsite");
+
+            if (conf == true) {
+                window.open("https://www.google.com");
+                return true;
+            } else {
+                document.write("thanks");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

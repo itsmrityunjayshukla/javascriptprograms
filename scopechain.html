@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope chain javascript</title>
+</head>
+
+<body>
+    <script>
+        var x = 0;
+        var y = "learn the java script";
+
+        console.log(x);
+
+        f1();
+        function f1() {
+            var fun1 = "this is the front end script language function1";
+            var y1 = "this is the excution first";
+
+            console.log(x);
+
+            f2();
+            function f2() {
+                var fun2 = "this is the front end script language function2";
+                var y2 = "this is the excution second";
+
+                console.log(x);
+
+                f3();
+                function f3() {
+                    var fun3 = "this is the front end script language function3";
+                    var y3 = "this is the excution third";
+
+                    console.log(x);
+
+                    f4();
+                    function f4() {
+                        var fun4 = "this is the front end script language function4";
+                        var y4 = "this is the excution four";
+
+                        console.log(x);
+
+                        console.log(y4);
+                        console.log(fun4);
+                        console.log(y3);
+                        console.log(fun3);
+                        console.log(y2);
+                        console.log(fun2);
+                        console.log(y1);
+                        console.log(fun1);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
